@@ -474,7 +474,7 @@ const TeamSection = () => {
                 official 2025–2026 Consolidated Activity &amp; Impact Summary submitted to the Ministry of Health. 
                 The verified Regional Coordinators above lead operations in the Center, West, North, North-West, 
                 and Far-North regions. Outreach, screenings, and volunteer teams in the Littoral, South-West, 
-                and Adamawa regions are actively mobilized under national supervision, with local appointments 
+                and East regions are actively mobilized under national supervision, with local appointments
                 undergoing confirmation.
               </p>
             </div>
