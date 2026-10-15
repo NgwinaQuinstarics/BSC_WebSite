@@ -26,6 +26,15 @@
   max-width: 40%;
 }
 
+.statistics-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF1100;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 12px 0;
+}
+
 .statistics-title {
   font-size: 48px;
   font-weight: 800;

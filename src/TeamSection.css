@@ -48,13 +48,74 @@
   margin: 0 auto;
 }
 
-/* === TEAM GRID === */
+/* === TABS === */
+.team-tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
 
+.team-tabs {
+  display: inline-flex;
+  background-color: #ECEFF1;
+  padding: 6px;
+  border-radius: 50px;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.team-tab-btn {
+  border: none;
+  background: transparent;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-tab-btn:hover {
+  color: #1A1A1A;
+}
+
+.team-tab-btn.active {
+  background-color: #FFFFFF;
+  color: #FF1100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tab-count {
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.team-tab-btn.active .tab-count {
+  background: #FFE5E5;
+  color: #FF1100;
+}
+
+.team-anchor-offset {
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
+
+/* === TEAM GRID === */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 /* === TEAM CARD === */
@@ -140,8 +201,125 @@
   font-size: 14px;
   color: #6C757D;
   line-height: 1.6;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   flex-grow: 1;
+}
+
+/* === BADGES === */
+.team-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #495057;
+  background-color: #F1F3F5;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.category-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FF1100;
+  background-color: #FFF0F0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.member-education {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2B6CB0;
+  background-color: #EBF8FF;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 0 auto 14px auto;
+  max-width: 100%;
+  line-height: 1.4;
+}
+
+.education-icon {
+  flex-shrink: 0;
+  color: #3182CE;
+}
+
+.member-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2D3748;
+  background-color: #F7FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 12px auto 0 auto;
+}
+
+.contact-icon {
+  color: #FF1100;
+  flex-shrink: 0;
+}
+
+.contact-number {
+  letter-spacing: 0.3px;
+}
+
+/* === REGIONAL STATUS NOTICE === */
+.regional-status-notice {
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 100%);
+  border: 1px solid #FFD6D6;
+  border-radius: 16px;
+  padding: 24px 30px;
+  margin: 20px auto 60px auto;
+  max-width: 1000px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 4px 16px rgba(255, 17, 0, 0.05);
+}
+
+.notice-icon {
+  background-color: #FF1100;
+  color: #FFFFFF;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notice-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0 0 8px 0;
+}
+
+.notice-text {
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* === SOCIALS === */

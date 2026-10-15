@@ -12,6 +12,7 @@ const Footer = () => {
     { name: "Activities", href: "/activities", isRoute: true },
     { name: "News", href: "/news", isRoute: true },
     { name: "Team", href: "#team" },
+    { name: "Ambassadors", href: "#ambassadors" },
     { name: "About", href: "#about" },
     { name: "Gallery", href: "#gallery" }
   ];

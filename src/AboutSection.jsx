@@ -44,9 +44,9 @@ const AboutSection = () => {
             
             <p>
               From that realization, Break Sickle Cycle was launched with just five committed friends. 
-              Today, we are a community of about forty voices—patients, caregivers, health professionals, 
-              and allies—united to sweep away ignorance, support those affected, and break the cycle 
-              once and for all.
+              Today, we have grown into a dynamic movement of over 100 trained volunteers, medical professionals, 
+              regional coordinators, and international ambassadors across multiple countries—united to sweep away 
+              ignorance, support those affected, and break the cycle once and for all.
             </p>
           </div>
         </div>

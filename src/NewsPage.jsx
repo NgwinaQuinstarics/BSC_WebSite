@@ -20,21 +20,26 @@ const NewsPage = () => {
   ];
 
   useEffect(() => {
+    let ignore = false;
+    const fetchPosts = async () => {
+      setLoading(true);
+      const params = {};
+      if (activeCategory !== "all") {
+        params.category = activeCategory;
+      }
+      const data = await getNews(params);
+      if (!ignore) {
+        if (data) {
+          setPosts(data.results || data);
+        }
+        setLoading(false);
+      }
+    };
     fetchPosts();
+    return () => {
+      ignore = true;
+    };
   }, [activeCategory]);
-
-  const fetchPosts = async () => {
-    setLoading(true);
-    const params = {};
-    if (activeCategory !== "all") {
-      params.category = activeCategory;
-    }
-    const data = await getNews(params);
-    if (data) {
-      setPosts(data.results || data);
-    }
-    setLoading(false);
-  };
 
   const formatDate = (dateStr) => {
     if (!dateStr) return "";

@@ -100,6 +100,17 @@ const Navbar = () => {
           </li>
 
           <li
+            className={activeSection === "ambassadors" && isHomePage ? "active" : ""}
+            onClick={() => handleClick("ambassadors")}
+          >
+            {isHomePage ? (
+              <a href="#ambassadors">Ambassadors</a>
+            ) : (
+              <Link to="/#ambassadors">Ambassadors</Link>
+            )}
+          </li>
+
+          <li
             className={activeSection === "about" && isHomePage ? "active" : ""}
             onClick={() => handleClick("about")}
           >

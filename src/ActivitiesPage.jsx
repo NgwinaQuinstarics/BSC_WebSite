@@ -18,21 +18,26 @@ const ActivitiesPage = () => {
   ];
 
   useEffect(() => {
+    let ignore = false;
+    const fetchActivities = async () => {
+      setLoading(true);
+      const params = {};
+      if (activeFilter !== "all") {
+        params.status = activeFilter;
+      }
+      const data = await getActivities(params);
+      if (!ignore) {
+        if (data) {
+          setActivities(data);
+        }
+        setLoading(false);
+      }
+    };
     fetchActivities();
+    return () => {
+      ignore = true;
+    };
   }, [activeFilter]);
-
-  const fetchActivities = async () => {
-    setLoading(true);
-    const params = {};
-    if (activeFilter !== "all") {
-      params.status = activeFilter;
-    }
-    const data = await getActivities(params);
-    if (data) {
-      setActivities(data);
-    }
-    setLoading(false);
-  };
 
   const getStatusBadge = (status) => {
     switch (status) {

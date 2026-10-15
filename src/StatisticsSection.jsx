@@ -3,11 +3,42 @@ import "./StatisticsSection.css";
 import { getStatistics } from "./api";
 
 const STATIC_STATS = [
-  { id: 1, number: "100k+", label: "People Reached", description: "Through social media, radio and TV campaigns" },
-  { id: 2, number: "15k+", label: "Students Impacted", description: "In 20 schools across Cameroon" },
-  { id: 3, number: "300", label: "Youths Screened", description: "Under 35 received genotype status" },
-  { id: 4, number: "6", label: "Regions", description: "Active presence across the country" },
-  { id: 5, number: "50", label: "Volunteers", description: "Committed to the BSC mission" },
+  { 
+    id: 1, 
+    number: "300,000+", 
+    label: "Students Sensitized", 
+    description: "Educated on sickle cell disease, genotype awareness, and prevention" 
+  },
+  { 
+    id: 2, 
+    number: "1,310", 
+    label: "Youths Screened", 
+    description: "Individuals under 35 received genotype screening across 2 regions" 
+  },
+  { 
+    id: 3, 
+    number: "41", 
+    label: "Institutions Reached", 
+    description: "Educational institutions engaged, including 39 in Cameroon and 2 in Liberia" 
+  },
+  { 
+    id: 4, 
+    number: "8", 
+    label: "Regions Covered", 
+    description: "Active regional coverage across Cameroon, alongside international expansion" 
+  },
+  { 
+    id: 5, 
+    number: "Millions+", 
+    label: "People Reached", 
+    description: "Sensitized through television, radio, digital, and social media campaigns" 
+  },
+  { 
+    id: 6, 
+    number: "100+", 
+    label: "Trained Volunteers", 
+    description: "Mobilized across regional networks and international chapters" 
+  },
 ];
 
 const StatisticsSection = () => {
@@ -28,14 +59,16 @@ const StatisticsSection = () => {
       <div className="statistics-container">
         {/* HEADER */}
         <div className="statistics-header">
+          <p className="statistics-tagline">Official Impact Report 2025–2026</p>
           <h2 className="statistics-title">
             Highlighting the growth of Break Sickle Cycle's impact in figures
           </h2>
           <p className="statistics-description">
-            Through our "One Voice, One Hope: Youths Leading the Sickle Cell Fight" campaign, 
-            we're making a tangible difference in communities across Cameroon. Our efforts have 
-            revealed that only 12% of symposium participants knew their genotype beforehand, 
-            highlighting the critical need for continued awareness and education.
+            Through our &quot;One Voice, One Hope: Youths Leading the Sickle Cell Fight&quot; campaign 
+            and documented activities across 2025–2026, Break Sickle Cycle is making a measurable 
+            difference in communities across Cameroon and internationally. From school-based 
+            sensitization and youth genotype screening to volunteer training and media outreach, 
+            our evidence-based initiatives continue to expand and save lives.
           </p>
         </div>
 
