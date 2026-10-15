@@ -5,9 +5,9 @@ import { getStatistics } from "./api";
 const STATIC_STATS = [
   { 
     id: 1, 
-    number: "300,000+", 
+    number: "30,000+", 
     label: "Students Sensitized", 
-    description: "Educated on sickle cell disease, genotype awareness, and prevention" 
+    description: "Educated on sickle cell disease, genotype awareness, and prevention across 41 institutions" 
   },
   { 
     id: 2, 

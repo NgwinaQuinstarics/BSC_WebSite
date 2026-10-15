@@ -7,7 +7,6 @@ import { Phone, MapPin, GraduationCap, Globe } from "lucide-react";
 import bitsie from "./assets/team/bitsie.jpeg";
 import akwa from "./assets/team/akwa.jpeg";
 import chamberlin from "./assets/team/chamberlin.jpeg";
-import issangui from "./assets/team/issangui.jpeg";
 import kelly from "./assets/team/kelly.jpeg";
 import yvonne from "./assets/team/yvonne.jpeg";
 import sona from "./assets/team/sona.jpeg";
@@ -25,6 +24,11 @@ import manuelaMba from "./assets/ambassadors/Manuela Leocadia Mba Eya .jpeg";
 import mondeWalubita from "./assets/ambassadors/Monde Blessing Walubita .jpeg";
 import olandoGoodridge from "./assets/ambassadors/Olando G. Goodridge .jpeg";
 import omegaDzvova from "./assets/ambassadors/Omega Dzvova .jpeg";
+import adeolaEka from "./assets/ambassadors/Adeola Eka .jpeg";
+import aksantiKasole from "./assets/ambassadors/Aksanti Kasole Chito.jpeg";
+import tchatchouaRegina from "./assets/ambassadors/Tchatchoua Regina.jpeg";
+import drIssanguiGaudy from "./assets/ambassadors/Dr. Gylardi Gaudy Issangui.jpeg";
+import drOsseinySamgwa from "./assets/ambassadors/Dr Osseiny Samgwa .jpeg";
 
 const STATIC_TEAM = [
   // ============================================================
@@ -99,13 +103,13 @@ const STATIC_TEAM = [
   { 
     id: 7, 
     name: "Omega Dzvova", 
-    position: "PR & Communications Officer", 
-    category: "leadership",
-    categoryLabel: "Communications (Zimbabwe)",
+    position: "Ambassador Zimbabwe & PR / Communications Officer", 
+    category: ["leadership", "ambassadors"],
+    categoryLabel: "Ambassador & Communications",
     location: "Zimbabwe",
     flag: "🇿🇼",
     phone: "+263 78 302 0400",
-    bio: "Serving as PR & Communications Officer, driving international communications, media outreach, and advocacy for Break Sickle Cycle from Zimbabwe.", 
+    bio: "Serving as PR & Communications Officer and Break Sickle Cycle Ambassador in Zimbabwe, spearheading international communications, media outreach, and grassroots advocacy.", 
     image: omegaDzvova 
   },
   { 
@@ -122,13 +126,14 @@ const STATIC_TEAM = [
   { 
     id: 9, 
     name: "Dr Issangui Gaudy", 
-    position: "Head of Medical and Research", 
-    category: "leadership",
+    position: "Head of Medical & Research • Ambassador (Congo-Brazzaville)", 
+    category: ["leadership", "ambassadors"],
     categoryLabel: "Medical & Research",
-    location: "Cameroon",
-    flag: "🇨🇲",
-    bio: "Spearheading medical support programs and research initiatives to advance sickle cell care and treatment.", 
-    image: issangui 
+    location: "Congo-Brazzaville",
+    flag: "🇨🇬",
+    phone: "+242 06 542 8804",
+    bio: "Medical Doctor, Public Health Researcher, and Sickle Cell Disease Expert leading BSC's medical research programs and serving as Ambassador in Congo-Brazzaville.", 
+    image: drIssanguiGaudy 
   },
   { 
     id: 10, 
@@ -187,14 +192,66 @@ const STATIC_TEAM = [
   { 
     id: 14, 
     name: "Bridget Lilian Moyo", 
-    position: "Ambassador, Malawi Break Sickle Cycle", 
+    position: "Ambassador for Break Sickle Cycle Malawi", 
     category: "ambassadors",
     categoryLabel: "Ambassador",
     location: "Malawi",
     flag: "🇲🇼",
+    education: "Biomedical Engineering Student",
     phone: "+265 883 209 682",
-    bio: "Leading sickle cell awareness campaigns, youth advocacy, and warrior support initiatives for Break Sickle Cycle in Malawi.", 
+    bio: "Biomedical engineering student leading sickle cell awareness campaigns, youth advocacy, and warrior support initiatives for Break Sickle Cycle in Malawi.", 
     image: bridgetMoyo 
+  },
+  { 
+    id: 20, 
+    name: "Adeola Eka", 
+    position: "Ambassador for Break Sickle Cycle Nigeria", 
+    category: "ambassadors",
+    categoryLabel: "Ambassador",
+    location: "Nigeria",
+    flag: "🇳🇬",
+    education: "Founder AI4AFRICA",
+    phone: "+234 08022228092",
+    bio: "Founder of AI4AFRICA and Break Sickle Cycle Ambassador in Nigeria, leveraging technology, youth mobilization, and community sensitization to break the sickle cell cycle.", 
+    image: adeolaEka 
+  },
+  { 
+    id: 21, 
+    name: "Aksanti Kasole Chito", 
+    position: "Ambassador for Break Sickle Cycle DR Congo", 
+    category: "ambassadors",
+    categoryLabel: "Ambassador",
+    location: "DR Congo",
+    flag: "🇨🇩",
+    education: "Coordonnateur AIPMH asbl",
+    phone: "+243 861 064 643 / +243 840 243 688",
+    bio: "Coordonnateur of AIPMH asbl, championing genetic education, carrier screening, and patient support across the Democratic Republic of Congo.", 
+    image: aksantiKasole 
+  },
+  { 
+    id: 22, 
+    name: "Tchatchoua Regina", 
+    position: "Ambassador for Break Sickle Cycle France", 
+    category: "ambassadors",
+    categoryLabel: "Ambassador",
+    location: "France",
+    flag: "🇫🇷",
+    education: "Accountant & Diaspora Advocate",
+    phone: "+33 7 53 44 58 86",
+    bio: "Accountant and diaspora advocate serving as Ambassador in France, fostering international partnerships, community outreach, and awareness for sickle cell warriors.", 
+    image: tchatchouaRegina 
+  },
+  { 
+    id: 23, 
+    name: "Dr. Osseiny Samgwa", 
+    position: "Ambassador & Health Influencer", 
+    category: "ambassadors",
+    categoryLabel: "Ambassador",
+    location: "Cameroon",
+    flag: "🇨🇲",
+    education: "Medical Doctor • Founder OSF",
+    bio: "Medical Doctor, Humanitarian Advocate, Health Influencer, and Founder of OSF, dedicated to youth health education, preventive screening, and sickle cell awareness.", 
+    image: drOsseinySamgwa 
   },
 
   // ============================================================
@@ -292,28 +349,37 @@ const TeamSection = () => {
     fetchTeam();
   }, []);
 
+  const countCategory = (cat) =>
+    teamMembers.filter((m) =>
+      Array.isArray(m.category) ? m.category.includes(cat) : m.category === cat
+    ).length;
+
   const tabs = [
     { key: "all", label: "All Members", count: teamMembers.length },
     { 
       key: "leadership", 
       label: "Leadership & Communications", 
-      count: teamMembers.filter((m) => m.category === "leadership").length 
+      count: countCategory("leadership")
     },
     { 
       key: "ambassadors", 
       label: "International Ambassadors", 
-      count: teamMembers.filter((m) => m.category === "ambassadors").length 
+      count: countCategory("ambassadors")
     },
     { 
       key: "coordinators", 
       label: "Regional Coordinators (Cameroon)", 
-      count: teamMembers.filter((m) => m.category === "coordinators").length 
+      count: countCategory("coordinators")
     },
   ];
 
   const filteredMembers = activeTab === "all"
     ? teamMembers
-    : teamMembers.filter((member) => member.category === activeTab);
+    : teamMembers.filter((member) => 
+        Array.isArray(member.category) 
+          ? member.category.includes(activeTab) 
+          : member.category === activeTab
+      );
 
   return (
     <section className="team-section" id="team">
