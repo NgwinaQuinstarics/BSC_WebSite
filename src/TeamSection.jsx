@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./TeamSection.css";
-import { getTeam } from "./api";
 import { Phone, MapPin, GraduationCap, Globe } from "lucide-react";
 
 // Fallback static images - Leadership & Regional Coordinators
@@ -315,7 +314,6 @@ const STATIC_TEAM = [
 ];
 
 const TeamSection = () => {
-  const [teamMembers, setTeamMembers] = useState(STATIC_TEAM);
   const [activeTab, setActiveTab] = useState("all");
 
   useEffect(() => {
@@ -334,28 +332,13 @@ const TeamSection = () => {
     return () => window.removeEventListener("hashchange", handleHash);
   }, []);
 
-  useEffect(() => {
-    const fetchTeam = async () => {
-      const data = await getTeam();
-      if (data && data.length > 0) {
-        // Merge API data with local rich metadata if available
-        const enriched = data.map((item) => {
-          const match = STATIC_TEAM.find((s) => s.name.toLowerCase() === item.name.toLowerCase());
-          return match ? { ...match, ...item, image: item.image || match.image } : item;
-        });
-        setTeamMembers(enriched);
-      }
-    };
-    fetchTeam();
-  }, []);
-
   const countCategory = (cat) =>
-    teamMembers.filter((m) =>
+    STATIC_TEAM.filter((m) =>
       Array.isArray(m.category) ? m.category.includes(cat) : m.category === cat
     ).length;
 
   const tabs = [
-    { key: "all", label: "All Members", count: teamMembers.length },
+    { key: "all", label: "All Members", count: STATIC_TEAM.length },
     { 
       key: "leadership", 
       label: "Leadership & Communications", 
@@ -374,8 +357,8 @@ const TeamSection = () => {
   ];
 
   const filteredMembers = activeTab === "all"
-    ? teamMembers
-    : teamMembers.filter((member) => 
+    ? STATIC_TEAM
+    : STATIC_TEAM.filter((member) =>
         Array.isArray(member.category) 
           ? member.category.includes(activeTab) 
           : member.category === activeTab

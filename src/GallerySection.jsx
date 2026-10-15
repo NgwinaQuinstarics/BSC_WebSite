@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./GallerySection.css";
-import { getGallery } from "./api";
 
 // Fallback static images
 import gallery1 from "./assets/gallery/marche.jpeg";
@@ -35,22 +34,10 @@ const STATIC_GALLERY = [
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [galleryItems, setGalleryItems] = useState(STATIC_GALLERY);
-
-  useEffect(() => {
-    const fetchGallery = async () => {
-      const data = await getGallery();
-      if (data && data.length > 0) {
-        setGalleryItems(data);
-      }
-    };
-    fetchGallery();
-  }, []);
-
   const itemsPerPage = 3;
-  const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+  const totalPages = Math.ceil(STATIC_GALLERY.length / itemsPerPage);
 
-  const visibleItems = galleryItems.slice(
+  const visibleItems = STATIC_GALLERY.slice(
     currentIndex * itemsPerPage,
     (currentIndex + 1) * itemsPerPage
   );

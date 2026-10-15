@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import "./StatisticsSection.css";
-import { getStatistics } from "./api";
 
 const STATIC_STATS = [
   { 
@@ -42,18 +40,6 @@ const STATIC_STATS = [
 ];
 
 const StatisticsSection = () => {
-  const [stats, setStats] = useState(STATIC_STATS);
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      const data = await getStatistics();
-      if (data && data.length > 0) {
-        setStats(data);
-      }
-    };
-    fetchStats();
-  }, []);
-
   return (
     <section className="statistics-section" id="impact">
       <div className="statistics-container">
@@ -74,7 +60,7 @@ const StatisticsSection = () => {
 
         {/* STATS GRID */}
         <div className="statistics-grid">
-          {stats.map((stat) => (
+          {STATIC_STATS.map((stat) => (
             <div key={stat.id} className="stat-card">
               <h3 className="stat-number">{stat.number}</h3>
               <p className="stat-label">{stat.label}</p>

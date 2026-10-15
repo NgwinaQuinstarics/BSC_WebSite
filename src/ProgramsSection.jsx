@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ProgramsSection.css";
-import { getActivities } from "./api";
 
 // Fallback static images
 import program1 from "./assets/awareness.jpeg";
@@ -26,22 +25,10 @@ const STATIC_PROGRAMS = [
 
 const ProgramsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [programs, setPrograms] = useState(STATIC_PROGRAMS);
-
-  useEffect(() => {
-    const fetchPrograms = async () => {
-      const data = await getActivities();
-      if (data && data.length > 0) {
-        setPrograms(data);
-      }
-    };
-    fetchPrograms();
-  }, []);
-
   const itemsPerPage = 3;
-  const totalPages = Math.ceil(programs.length / itemsPerPage);
+  const totalPages = Math.ceil(STATIC_PROGRAMS.length / itemsPerPage);
 
-  const visiblePrograms = programs.slice(
+  const visiblePrograms = STATIC_PROGRAMS.slice(
     currentIndex * itemsPerPage,
     (currentIndex + 1) * itemsPerPage
   );
