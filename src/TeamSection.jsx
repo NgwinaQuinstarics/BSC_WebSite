@@ -23,11 +23,7 @@ import manuelaMba from "./assets/ambassadors/Manuela Leocadia Mba Eya .jpeg";
 import mondeWalubita from "./assets/ambassadors/Monde Blessing Walubita .jpeg";
 import olandoGoodridge from "./assets/ambassadors/Olando G. Goodridge .jpeg";
 import omegaDzvova from "./assets/ambassadors/Omega Dzvova .jpeg";
-import adeolaEka from "./assets/ambassadors/Adeola Eka .jpeg";
-import aksantiKasole from "./assets/ambassadors/Aksanti Kasole Chito.jpeg";
-import tchatchouaRegina from "./assets/ambassadors/Tchatchoua Regina.jpeg";
 import drIssanguiGaudy from "./assets/ambassadors/Dr. Gylardi Gaudy Issangui.jpeg";
-import drOsseinySamgwa from "./assets/ambassadors/Dr Osseiny Samgwa .jpeg";
 
 const STATIC_TEAM = [
   // ============================================================
@@ -125,9 +121,9 @@ const STATIC_TEAM = [
   { 
     id: 9, 
     name: "Dr. Gylardi Gaudy Issangui", 
-    position: "Head of Medical & Research • Ambassador (Congo-Brazzaville)", 
-    category: ["leadership", "ambassadors"],
-    categoryLabel: "Medical Doctor & Ambassador",
+    position: "Head of Medical & Research",
+    category: "leadership",
+    categoryLabel: "Medical & Research",
     location: "Republic of the Congo (Congo-Brazzaville)",
     flag: "🇨🇬",
     phone: "+242 06 542 8804",
@@ -201,58 +197,6 @@ const STATIC_TEAM = [
     bio: "Biomedical engineering student leading sickle cell awareness campaigns, youth advocacy, and warrior support initiatives for Break Sickle Cycle in Malawi.", 
     image: bridgetMoyo 
   },
-  { 
-    id: 20, 
-    name: "Adeola Eka", 
-    position: "Ambassador for Break Sickle Cycle Nigeria", 
-    category: "ambassadors",
-    categoryLabel: "Ambassador",
-    location: "Nigeria",
-    flag: "🇳🇬",
-    education: "Founder AI4AFRICA",
-    phone: "+234 08022228092",
-    bio: "Founder of AI4AFRICA and Break Sickle Cycle Ambassador in Nigeria, leveraging technology, youth mobilization, and community sensitization to break the sickle cell cycle.", 
-    image: adeolaEka 
-  },
-  { 
-    id: 21, 
-    name: "Aksanti Kasole Chito", 
-    position: "Ambassador Break Sickle Cycle RDC Congo", 
-    category: "ambassadors",
-    categoryLabel: "Ambassador",
-    location: "RDC (DR Congo)",
-    flag: "🇨🇩",
-    education: "Coordonnateur AIPMH asbl",
-    phone: "243861064643 / 243840243688",
-    bio: "Coordonnateur of AIPMH asbl (Association pour l'information et la prévention des maladies héréditaires), championing genetic education, carrier screening, and patient support across RDC.", 
-    image: aksantiKasole 
-  },
-  { 
-    id: 22, 
-    name: "Tchatchoua Regina", 
-    position: "Ambassador Break Sickle Cycle France", 
-    category: "ambassadors",
-    categoryLabel: "Ambassador",
-    location: "France",
-    flag: "🇫🇷",
-    education: "Accountant & Diaspora Advocate",
-    phone: "0753445886",
-    bio: "Accountant and diaspora advocate serving as Ambassador in France, fostering international partnerships, community outreach, and awareness for sickle cell warriors.", 
-    image: tchatchouaRegina 
-  },
-  { 
-    id: 23, 
-    name: "Dr. Osseiny Samgwa", 
-    position: "Ambassador Break Sickle Cycle Cameroon & Health Influencer", 
-    category: "ambassadors",
-    categoryLabel: "Ambassador (Cameroon)",
-    location: "Cameroon",
-    flag: "🇨🇲",
-    education: "MD, Humanitarian Advocate, Health Influencer, Founder - OSF",
-    bio: "Medical Doctor, Humanitarian Advocate, Health Influencer, and Founder of OSF, serving as Break Sickle Cycle Ambassador for Cameroon to champion youth health education and early screening.", 
-    image: drOsseinySamgwa 
-  },
-
   // ============================================================
   // REGIONAL COORDINATORS (CAMEROON)
   // ============================================================
@@ -346,7 +290,7 @@ const TeamSection = () => {
     },
     { 
       key: "ambassadors", 
-      label: "International Ambassadors", 
+      label: "Official International Ambassadors",
       count: countCategory("ambassadors")
     },
     { 
